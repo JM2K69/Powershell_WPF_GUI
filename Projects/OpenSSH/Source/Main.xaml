@@ -45,8 +45,8 @@
         <Label x:Name="label" Content="Open SSH Client :" HorizontalAlignment="Left" Margin="68,66,0,0" VerticalAlignment="Top" Width="112" Grid.ColumnSpan="2"/>
         <Label x:Name="label_Copy" Content="Open SSH Server :" HorizontalAlignment="Left" Margin="68,97,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="0.496,2.077" Grid.ColumnSpan="2"/>
         <Button x:Name="Get_Status" Content="Get Status" HorizontalAlignment="Left" Margin="196,103,0,0" VerticalAlignment="Top" Width="74" Grid.Column="1"/>
-        <CheckBox x:Name="Install_C" Content="Install Open SSH Client" HorizontalAlignment="Left" Margin="68,161,0,0" VerticalAlignment="Top" Height="18" Grid.ColumnSpan="2"  IsEnabled="False" />
-        <CheckBox x:Name="Install_S" Content="Install Open SSH Server" HorizontalAlignment="Left" Margin="68,189,0,0" VerticalAlignment="Top" Height="18" Grid.ColumnSpan="2" IsEnabled="False"/>
+        <CheckBox x:Name="Install_C" Content="Install Open SSH Client" HorizontalAlignment="Left" Margin="68,161,0,0" VerticalAlignment="Top" Height="18" Grid.ColumnSpan="2"   />
+        <CheckBox x:Name="Install_S" Content="Install Open SSH Server" HorizontalAlignment="Left" Margin="68,189,0,0" VerticalAlignment="Top" Height="18" Grid.ColumnSpan="2" />
         <Button x:Name="Install" Content="Install" HorizontalAlignment="Left" Margin="196,181,0,0" VerticalAlignment="Top" Width="74" Grid.Column="1"/>
         <Button x:Name="Quit" Content="Quit" HorizontalAlignment="Left" Margin="286,181,0,0" VerticalAlignment="Top" Width="74" Grid.Column="1"/>
         <Image x:Name="image" Source="images/ssl.png" HorizontalAlignment="Left" Height="100"  Margin="273,17,0,0"  VerticalAlignment="Top" Width="100" Grid.Column="1"/>
