@@ -1,0 +1,68 @@
+<Grid Margin="20,20,0,0"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks">
+    
+<Grid.Resources>
+  <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Cobalt.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+	</ResourceDictionary>
+	</Grid.Resources>
+	
+	
+<StackPanel>	
+  <StackPanel Orientation="Horizontal">
+  		<iconPacks:PackIconMaterial Kind="Update" Height="45" Width="45" Margin="0,10,10,10"/>
+		<Label FontSize="30"  Content=" Updated Powershell Module" Foreground="#FF444444" Margin="05,10,0,0" ></Label>
+
+  </StackPanel >
+  <StackPanel Orientation="Horizontal">
+<Controls:ToggleSwitch x:Name="Scopes" OnLabel=" AllUsers" OffLabel=" Current User" Style="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}" Margin="0,5,0,0"/>
+        <Label FontSize="12"  Content="Module to be update :" Foreground="#FF444444" Margin="30,00,0,0"  FontWeight="Bold" ></Label>
+        <Label Name="NBUpdateMod" FontSize="12"  Content="" Foreground="#FF444444" Margin="5,0,0,0" ></Label>
+   </StackPanel>
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" FlowDirection="LeftToRight" Margin="75,20,0,0">
+				
+				<DataGrid
+                  Name="DataGrid_Updated"
+                  Width="600"
+                  Height="200"
+                  Margin="2,2,2,2"
+                  ColumnWidth="150"
+                  ItemsSource="{Binding}"
+                  ScrollViewer.CanContentScroll="True"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  SelectionMode="Single">
+                  <DataGrid.Columns>
+                     <DataGridTextColumn Binding="{Binding Name}" Header="Name"/>
+                     <DataGridTextColumn Binding="{Binding Version}" Header="Available Version"/>
+                     <DataGridTextColumn Binding="{Binding Repository}" Header="Repository"/>
+                     <DataGridTextColumn Binding="{Binding Installed}" Header="Installed Version"/>
+                  </DataGrid.Columns>
+               </DataGrid>
+
+						</StackPanel>
+				<StackPanel>	
+				<StackPanel Orientation="Horizontal">
+						<Button x:Name="Find" Content="Find-Module" Width="250" Background="#FF082C9D" Foreground="White" BorderThickness="0" Height="40" Margin="90,35,0,0"></Button>	
+        	  <Button x:Name="Update" Content="Update-Module" Width="250" Background="#FF082C9D" Foreground="White" BorderThickness="0" Height="40" Margin="10,35,0,0"></Button>	
+      </StackPanel>
+        </StackPanel>
+					</StackPanel>
+				
+
+	
+
+</Grid>
+		
+
+	 	
+		
