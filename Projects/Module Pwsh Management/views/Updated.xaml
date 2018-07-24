@@ -24,23 +24,26 @@
 
   </StackPanel >
   <StackPanel Orientation="Horizontal">
-<Controls:ToggleSwitch x:Name="Scopes" OnLabel=" AllUsers" OffLabel=" Current User" Style="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}" Margin="0,5,0,0"/>
-        <Label FontSize="12"  Content="Module to be update :" Foreground="#FF444444" Margin="30,00,0,0"  FontWeight="Bold" ></Label>
+<Controls:ToggleSwitch x:Name="Scopes" OnLabel=" AllUsers   " OffLabel=" Current User" Style="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}" Margin="0,5,0,0"/>
+        <Label FontSize="12"  Content="Number module to be updated :" Foreground="#FF444444" Margin="30,00,0,0"  FontWeight="Bold" ></Label>
         <Label Name="NBUpdateMod" FontSize="12"  Content="" Foreground="#FF444444" Margin="5,0,0,0" ></Label>
    </StackPanel>
-			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" FlowDirection="LeftToRight" Margin="75,20,0,0">
-				
-				<DataGrid
-                  Name="DataGrid_Updated"
-                  Width="600"
-                  Height="200"
-                  Margin="2,2,2,2"
-                  ColumnWidth="150"
-                  ItemsSource="{Binding}"
-                  ScrollViewer.CanContentScroll="True"
-                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                  ScrollViewer.VerticalScrollBarVisibility="Auto"
-                  SelectionMode="Single">
+			<StackPanel Orientation="Horizontal" Margin="75,20,0,0">
+			<StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="160,15,0,0">
+  	  		<Controls:ProgressRing Name="Wait_1" Foreground="#FF082C9D" Visibility="Collapsed" Margin="10,0,0,15"/>
+          <Label Name="Wait_2" FontSize="20" FontFamily="Comic sans MS" Content="Search Module to be Updated " Foreground="#FF082C9D" Margin="10,0,0,0" Visibility="Collapsed"></Label>
+          <Label Name="Wait_3" FontSize="20" FontFamily="Comic sans MS" Content="Please be patient . . . " Foreground="#FF082C9D" Margin="60,0,0,0" Visibility="Collapsed"></Label>
+    </StackPanel>
+				<DataGrid Name="DataGrid_Updated" Width="600"
+				Height="200"
+				Margin="-190,2,2,2"
+				ColumnWidth="150"
+				ItemsSource="{Binding}"
+				ScrollViewer.CanContentScroll="True"
+				ScrollViewer.HorizontalScrollBarVisibility="Auto"
+				ScrollViewer.VerticalScrollBarVisibility="Auto"
+				SelectionMode="Extended"
+                Visibility="Visible" >
                   <DataGrid.Columns>
                      <DataGridTextColumn Binding="{Binding Name}" Header="Name"/>
                      <DataGridTextColumn Binding="{Binding Version}" Header="Available Version"/>
@@ -48,12 +51,60 @@
                      <DataGridTextColumn Binding="{Binding Installed}" Header="Installed Version"/>
                   </DataGrid.Columns>
                </DataGrid>
-
-						</StackPanel>
+	<StackPanel Orientation="Vertical" Margin="15,80,0,0">	   
+		   <Button Name="Add_M" 
+		          Width="50"
+              Height="50"
+              Margin="0, -15, 0, 0"
+              Style="{DynamicResource MetroCircleButtonStyle}"
+              Visibility="Visible">
+    <Rectangle Width="20"
+               Height="20"
+               Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+        <Rectangle.OpacityMask>
+            <VisualBrush Stretch="Fill"
+                         Visual="{iconPacks:PackIcon {x:Static iconPacks:PackIconMaterialKind.Plus}}"/>
+        </Rectangle.OpacityMask>
+    </Rectangle>
+</Button>
+       <Button Name="Remove_M" 
+              Width="50"
+              Height="50"
+              Margin="0, 0, 0, 0"
+              Style="{DynamicResource MetroCircleButtonStyle}"
+              Visibility="Visible">
+    <Rectangle Width="20"
+               Height="3"
+               Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+        <Rectangle.OpacityMask>
+            <VisualBrush Stretch="Fill"
+                         Visual="{iconPacks:PackIcon {x:Static iconPacks:PackIconMaterialKind.Minus}}"/>
+        </Rectangle.OpacityMask>
+    </Rectangle>
+</Button>
+</StackPanel>
+		  <Controls:Badged x:Name="B_Add" Badge="{Binding Path=BadgeValue}" BadgePlacementMode="Right" Margin="10,50,0,0">
+      <Button Width="60"
+              Height="60"
+              Margin="0, -15, 0, 0"
+              Style="{DynamicResource MetroCircleButtonStyle}"
+              Visibility="Visible">
+    <Rectangle Width="30"
+               Height="30"
+               Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+        <Rectangle.OpacityMask>
+            <VisualBrush Stretch="Fill"
+                         Visual="{iconPacks:PackIcon {x:Static iconPacks:PackIconMaterialKind.CartOutline}}"/>
+        </Rectangle.OpacityMask>
+    </Rectangle>
+</Button>
+</Controls:Badged>
+ 				</StackPanel>
 				<StackPanel>	
 				<StackPanel Orientation="Horizontal">
-						<Button x:Name="Find" Content="Find-Module" Width="250" Background="#FF082C9D" Foreground="White" BorderThickness="0" Height="40" Margin="90,35,0,0"></Button>	
-        	  <Button x:Name="Update" Content="Update-Module" Width="250" Background="#FF082C9D" Foreground="White" BorderThickness="0" Height="40" Margin="10,35,0,0"></Button>	
+						<Button x:Name="Find" Content="Find-Module" Width="250" Background="#FF082C9D" Foreground="White" BorderThickness="0" Height="40" Margin="20,35,0,0"></Button>	
+        	  <Button x:Name="Update" Content="Update-Module All" Width="250" Background="#FF082C9D" Foreground="White" BorderThickness="0" Height="40" Margin="10,35,0,0"></Button>	
+         	  <Button x:Name="Update_S" Content="Update-Module Cart" Width="250" Background="#FF082C9D" Foreground="White" BorderThickness="0" Height="40" Margin="10,35,0,0"></Button>	
       </StackPanel>
         </StackPanel>
 					</StackPanel>

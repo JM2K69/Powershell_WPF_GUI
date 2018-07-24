@@ -5,7 +5,17 @@
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks">
 	
 <Grid Margin="15,20,0,0">
-
+<Grid.Resources>
+  <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Cobalt.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+	</ResourceDictionary>
+	</Grid.Resources>
 <StackPanel>	
   <StackPanel Orientation="Horizontal">
   
@@ -35,10 +45,21 @@
 			<StackPanel HorizontalAlignment="Left" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="0,30,0,0">
 			<Label FontSize="12"  Content=" Description :" Foreground="#FF444444" Margin="15,0,0,0" FontWeight="Bold" ></Label>
 			<Label FontSize="12" Name="Description" Content="" Foreground="#FF444444" Margin="5,0,0,0" Width="430" FontStyle="Italic" ></Label>
+<GroupBox Header="Advanced Option" HorizontalAlignment="Left" Margin="-30,-30,0,0" VerticalAlignment="Top" Height="130" Width="263">
+            <Grid HorizontalAlignment="Left" Height="226" VerticalAlignment="Top"
+                  Width="253" Margin="0,0,-2,-12">
+                <CheckBox Name="Allow" Content="AllowClobber" HorizontalAlignment="Left"
+                          Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <CheckBox Name="AllowP" Content="AllowPrerelease" HorizontalAlignment="Left"
+                          Margin="10,35,0,0" VerticalAlignment="Top"/>
+                <CheckBox Name="Force" Content="Force" HorizontalAlignment="Left"
+                          Margin="10,60,0,0" VerticalAlignment="Top"/>
+            </Grid>
+        </GroupBox>
 		</StackPanel>
 					<StackPanel Orientation="Horizontal" Margin="5,5,5,5" VerticalAlignment="Bottom">
-						<Button x:Name="FindM" Content="Find-Module" Width="230" Background="#FF082C9D" Foreground="White" BorderThickness="0" Height="40" Margin="95,95,0,0"></Button>	
-						<Button x:Name="InstallM" Content="Install-Module" Width="230" Background="#FF082C9D" Foreground="White" BorderThickness="0" Height="40" Margin="10,95,0,0"></Button>	
+						<Button x:Name="FindM" Content="Find-Module" Width="230" Background="#FF082C9D" Foreground="White" BorderThickness="0" Height="40" Margin="95,15,0,0"></Button>	
+						<Button x:Name="InstallM" Content="Install-Module" Width="230" Background="#FF082C9D" Foreground="White" BorderThickness="0" Height="40" Margin="10,15,0,0"></Button>	
         </StackPanel>
 
 					</StackPanel>
