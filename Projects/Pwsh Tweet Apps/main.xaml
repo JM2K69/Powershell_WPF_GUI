@@ -1,0 +1,157 @@
+﻿<Controls:MetroWindow 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:materialDesign="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Pwsh Tweet Apps" 
+		Height="470" Width="615"
+        WindowStartupLocation="CenterScreen" 
+	    ResizeMode="NoResize"
+        WindowStyle="None"
+	    BorderThickness="0" 		
+	    GlowBrush="{DynamicResource AccentColorBrush}"
+		Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        >
+		
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Create Metro Style  -->
+                
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Cobalt.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+				
+				<!-- MaterialDesign Style  -->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />  
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />  
+				<ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />  
+				<ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.DeepPurple.xaml" />  
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Card.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBox.xaml" />    
+	            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Flipper.xaml" />    
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>		
+		
+
+<Grid>
+	<StackPanel Orientation="Horizontal">
+		<materialDesign:ColorZone Mode="PrimaryDark" CornerRadius="12" materialDesign:ShadowAssist.ShadowDepth="Depth5" Margin="10" Width="300" Height="410">
+			<StackPanel Orientation="Vertical">
+				<StackPanel Orientation="Horizontal">
+					<materialDesign:PackIcon Kind="Twitterbox" Height="64" Width="64"/>
+					<TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}" Margin="15 15 0 0" >Pwsh Tweet Apps</TextBlock>
+				</StackPanel>
+				<materialDesign:ColorZone Mode="Light" CornerRadius="12" materialDesign:ShadowAssist.ShadowDepth="Depth5" Margin="10" Width="280" Height="325">
+					<StackPanel Orientation="Vertical">
+						 <TextBox
+						 	Name="Tweet_txt"
+							Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+							Width="250"  Height="280"  Margin="0 15 0 0" 
+							VerticalAlignment="Top"
+							MaxLength="280"
+							TextWrapping="Wrap" 
+							AcceptsReturn="True"
+							VerticalScrollBarVisibility="Auto"
+                            SpellCheck.IsEnabled="True"
+                            materialDesign:HintAssist.Hint="Please type you Tweet 280 caracter MAX."
+						 ></TextBox> 
+						<Button Margin="8 0 0 0 " Style="{StaticResource MaterialDesignToolButton}" Name="TweetB">
+							<materialDesign:PackIcon Kind="Twitter"/>
+						</Button>
+					</StackPanel>
+				</materialDesign:ColorZone> 
+			</StackPanel>
+		</materialDesign:ColorZone>
+		<StackPanel Orientation="Vertical">
+			<materialDesign:ColorZone Mode="Standard" CornerRadius="12"  materialDesign:ShadowAssist.ShadowDepth="Depth5" Width="250" Height="270" Margin=" 10 10 0 0 ">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="140" />
+					<RowDefinition Height="*" />
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+				<Image
+					Source="images/wpf.jpg"
+					Height="140"
+					Width="Auto"
+					Stretch="UniformToFill" />
+				<Button	Name="Facebook_G" Grid.Row="0" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+					HorizontalAlignment="Right"	VerticalAlignment="Bottom"	Margin="0 0 16 -20" ToolTip="FaceBook Group WPF" >
+					<materialDesign:PackIcon Kind="Facebook" Width="25" Height="25" />
+				</Button>
+				<StackPanel Grid.Row="1"  Margin="8 24 8 0">
+					<TextBlock  FontWeight="Bold">@JM2K69</TextBlock>
+					<TextBlock TextWrapping="Wrap" VerticalAlignment="Center"> 
+						Microsoft Certified Trainer 6 Year / PowerShell / PowerCli / Deployment / MDT / XAML / Automation 
+					</TextBlock>
+				</StackPanel>
+				<StackPanel HorizontalAlignment="Right"  Grid.Row="2" Orientation="Horizontal" Margin="5">
+					<ToggleButton Name="Website" IsChecked="False" Margin="1" Style="{StaticResource MaterialDesignActionToggleButton}" Width="25" Height="25">
+						<ToggleButton.Content>
+							<materialDesign:PackIcon
+							Kind="Web" />
+						</ToggleButton.Content>
+					</ToggleButton>
+					<ToggleButton Margin="4" Style="{StaticResource MaterialDesignActionToggleButton}" Width="25" Height="25">
+							<ToggleButton.Content>
+								<materialDesign:PackIcon
+								Kind="EmoticonSad" />
+							</ToggleButton.Content>
+							<materialDesign:ToggleButtonAssist.OnContent>
+								<materialDesign:PackIcon
+								Kind="EmoticonHappy" />
+							</materialDesign:ToggleButtonAssist.OnContent>
+					</ToggleButton>
+					 <materialDesign:PopupBox Style="{DynamicResource MaterialDesignMultiFloatingActionPopupBox}" Padding="2 0 2 0" Width="25" Height="25"> 
+						<StackPanel> 
+ 							 <Button Name="Github_P2" ToolTip="Github Profile">
+									<materialDesign:PackIcon Kind="GithubBox" Width="32" Height="32" /> 
+							 </Button> 
+							 <Button Name="Youtube_Chaine" ToolTip="My Youtube Chaine">
+									<materialDesign:PackIcon Kind="YoutubePlay" Width="32" Height="32" /> 
+							 </Button> 
+						</StackPanel> 
+					 </materialDesign:PopupBox> 
+				</StackPanel>
+			</Grid>
+			</materialDesign:ColorZone>
+			<materialDesign:ColorZone Mode="Light" CornerRadius="12"  materialDesign:ShadowAssist.ShadowDepth="Depth2" Height="130" Width="250" Margin=" 10 10 0 0 ">
+				<Grid>
+					<StackPanel	Grid.Row="1" Margin="8 10 8 0">
+						<TextBlock	FontWeight="Bold">	Follow Me on different social networks</TextBlock>
+						<StackPanel Orientation="Horizontal">
+							<Button	Grid.Row="0" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+								HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 5 16 -20" Name="Twitter_P" ToolTip="Twitter Profile" >
+								<materialDesign:PackIcon Kind="Twitter" Width="20" Height="20" />
+							</Button>
+							<Button	Grid.Row="0" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+								HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 5 16 -20" Name="Github_P" ToolTip="Github Profile">
+								<materialDesign:PackIcon Kind="GithubBox" Width="20" Height="20" />
+							</Button>
+							<Button	Grid.Row="0" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+								HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 5 16 -20" Name="Youtube_P" ToolTip="Youtube Chaine">
+								<materialDesign:PackIcon Kind="YoutubePlay" Width="20" Height="20" />
+							</Button>
+						</StackPanel>
+						<materialDesign:RatingBar Margin="110 35 0 0" Value="3" Name="BasicRatingBar" ToolTip="Raiting me" />
+					</StackPanel>
+				</Grid>
+			</materialDesign:ColorZone>
+		</StackPanel>
+	</StackPanel>
+</Grid>
+</Controls:MetroWindow>        
